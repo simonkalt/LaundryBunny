@@ -1,15 +1,21 @@
-import React, { Component } from "react";
+import React, { Component  } from "react";
+import { render } from 'react-dom'
+import Swal from 'sweetalert2'
+import validator from 'validator'
 
+
+var [emailError, setEmailError] = ""
 export default class Login extends Component {
     render() {
-        return (
+              return (
             <form>
 
                 <h3>Log in</h3>
 
                 <div className="form-group">
                     <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <input type="email" className="form-control" placeholder="Enter email" onChange={function(e) { validator.isEmail("lsjkdlfj") ? emailError =  'Enter valid Email!': emailError = 'Valid Email :)'}} /> 
+                    <span id="emailError">{emailError}</span>
                 </div>
 
                 <div className="form-group">
@@ -24,7 +30,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={function() { Swal.fire("Validation","Authentication occurs here!")}}>Sign in</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>

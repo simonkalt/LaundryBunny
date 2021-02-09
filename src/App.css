@@ -7,10 +7,19 @@
   pointer-events: none;
 }
 
+.lb-logo {
+  height: 120px;
+  align-items: baseline;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.bad-val {
+  color: red;
 }
 
 .App-header {
@@ -170,3 +179,6 @@ html{
   }
 }
 
+.top-react-icons{
+  font-size: 2rem;
+}
